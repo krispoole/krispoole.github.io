@@ -32,6 +32,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.111.2
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
     steps:
       - name: Install Hugo CLI
         run: |
