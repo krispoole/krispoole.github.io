@@ -8,7 +8,7 @@ about:
   title: "About Me"
   text: "
         <p>
-          <strong>Hi, I'm Kris Poole.</strong><br> I am a Software Engineer from St. Louis, Missouri, USA.
+          <strong>Hello! I’m Kris Poole.</strong><br> Software Engineer from St Louis, Missouri, USA.  I'm a backend software engineer that specializes in Java applications.
         </p>
         "
   list:
@@ -16,6 +16,12 @@ about:
       value: "35"
 
     - label: "Residence"
+      value: "USA"
+
+    - label: "Work Status"
+      value: "Full Time Employed"
+
+    - label: "Address"
       value: "St Louis, Missouri, USA"
 
 ### Services [ services ]
@@ -46,7 +52,7 @@ services:
 pricing:
   title: "Pricing"
   items:
-    - icon: "fa fa-chevron-right"
+    - icon: "ion-speedometer speed-basic"
       name: "Basic"
       price_pre: "$"
       price: "22"
@@ -74,7 +80,7 @@ pricing:
       button_link: "#"
       button_text: "Buy Basic"
 
-    - icon: "fa fa-chevron-right"
+    - icon: "ion-speedometer"
       name: "Pro"
       price_pre: "$"
       price: "48"
@@ -104,20 +110,19 @@ pricing:
 
 ### Facts [ facts ]
 facts:
-  title: "Fun Facts"
+  title: "Fun Fact"
   items:
-    - icon: "ion-planet"
-      name: "I used to be a NASA Engineer"
+    - icon: "ion-disc"
+      name: "80 Albumes Listened"
 
-    - icon: "ion-bonfire"
-      name: "I'm a Marine Corps Infantry Veteran"
+    - icon: "ion-trophy"
+      name: "15 Awards Won"
 
-    - icon: "ion-forward"
-      name: "Backend Development"
+    - icon: "ion-coffee"
+      name: "1 000 Cups of coffee"
 
-    - icon: "ion-earth"
-      name: "Earth is cool"
-
+    - icon: "ion-flag"
+      name: "10 Countries Visited"
 
 ### Clients [ clients ]
 clients:
@@ -165,24 +170,24 @@ resume:
     title: "Experience"
     icon: "ion-briefcase"
     items:
-      - year: "2013 - Present"
-        role: "Art Director"
-        company: "Facebook Inc."
-        text: "Collaborate with creative and development teams on the execution of ideas."
+      - year: "2022 - Present"
+        role: "Java Developer"
+        company: "Slalom Consulting"
+        text: "Delivering high quality software solutions to Fortune 500 companies."
         active: 1
         h_line: 1
 
-      - year: "2011 - 2012"
-        role: "Front-end Developer"
-        company: "Google Inc."
-        text: "Monitored technical aspects of the front-end delivery for several projects."
+      - year: "2016 - 2021"
+        role: "NASA Engineer"
+        company: "NASA"
+        text: "Worked on SLS/Artemis Mission. Designed pneumatic systems for Space Launch Operations. Lead Engineer for several projects."
         active: 0
         h_line: 1
 
-      - year: "2009 - 2010"
-        role: "Senior Developer"
-        company: "Abc Inc."
-        text: "Optimize website performance using latest technology."
+      - year: "2006 - 2014"
+        role: "Infantry Marine"
+        company: "Marine Corps"
+        text: "Deployed to Iraq/Afghanistan 3 times. Marksmanship instructor to new recruits."
         active: 0
         h_line: 0
   education:
@@ -191,102 +196,89 @@ resume:
     items:
       - year: "2021"
         institution: "Claim Academy"
-        city: "St Louis, Missouri"
-        text: "Full-Stack Java Web Development Coding Boot Camp"
+        city: "St Louis, MO"
+        text: "Full-Stack Java Developer boot camp."
         h_line: 1
       - year: "2014 - 2017"
         institution: "Georgia Southern University"
-        city: "Statesboro, Georgia"
-        text: "Bachelor's Degree in Mechanical Engineering"
+        city: "Statesboro, GA"
+        text: "Bachelor's Degree in Mechanical Engineering."
         h_line: 1
 
 ### Skills [ skills ]
 skills:
   title: "My Skills"
   columns:
-    - type: "default" #skills progress type - default, dotted, circles, list
-      title: "Design"
-      icon: "ion-easel"
-      items:
-        - label: "Web Design"
-          value: "90" #0-100 progress in %
+###    - type: "default" #skills progress type - default, dotted, circles, list
+###      title: "Design"
+###      icon: "ion-easel"
+###      items:
+###        - label: "Web Design"
+###          value: "90" #0-100 progress in %
 
-        - label: "Write Music"
-          value: "65" #0-100 progress in %
+###        - label: "Write Music"
+###          value: "65" #0-100 progress in %
 
-        - label: "Photoshop"
-          value: "75" #0-100 progress in %
+###        - label: "Photoshop"
+###          value: "75" #0-100 progress in %
 
-        - label: "Graphic Design"
-          value: "85" #0-100 progress in %
+###        - label: "Graphic Design"
+###          value: "85" #0-100 progress in %
+
+###    - type: "dotted" #skills progress type - default, dotted, circles, list
+###      title: "Languages"
+###      icon: "ion-flag"
+###      items:
+###        - label: "English"
+###          value: "90" #0-100 progress in %
+
+###        - label: "German"
+###          value: "60" #0-100 progress in %
+
+###        - label: "Italian"
+###          value: "30" #0-100 progress in %
+
+###        - label: "French"
+###          value: "70" #0-100 progress in %
 
     - type: "dotted" #skills progress type - default, dotted, circles, list
-      title: "Languages"
-      icon: "ion-flag"
-      items:
-        - label: "English"
-          value: "90" #0-100 progress in %
-
-        - label: "German"
-          value: "60" #0-100 progress in %
-
-        - label: "Italian"
-          value: "30" #0-100 progress in %
-
-        - label: "French"
-          value: "70" #0-100 progress in %
-
-    - type: "circles" #skills progress type - default, dotted, circles, list
       title: "Coding"
       icon: "ion-code"
       items:
-        - label: "WordPress"
-          value: "90" #0-100 progress in %
-
-        - label: "PHP / MYSQL"
+        - label: "Java"
           value: "75" #0-100 progress in %
 
-        - label: "Angular / JavaScript"
-          value: "85" #0-100 progress in %
+        - label: "Spring Boot / REST API"
+          value: "65" #0-100 progress in %
 
-        - label: "HTML / CSS"
-          value: "95" #0-100 progress in %
+        - label: "React / JavaScript"
+          value: "50" #0-100 progress in %
+        - label: "Cloud Development"
+          value: "75" #0-100 progress in %
 
     - type: "list" #skills progress type - default, dotted, circles, list
       title: "Knowledge"
       icon: "ion-android-list"
       items:
-        - label: "Website hosting"
+        - label: "Agile Methodologies"
           value: "" #0-100 progress in %
 
-        - label: "iOS and android apps"
+        - label: "Web Development"
           value: "" #0-100 progress in %
 
-        - label: "Create logo design"
+        - label: "AWS / Azure"
           value: "" #0-100 progress in %
 
-        - label: "Design for print"
+        - label: "MySQL"
           value: "" #0-100 progress in %
-
-        - label: "Modern and mobile-ready"
-          value: "" #0-100 progress in %
-
-        - label: "Advertising services include"
-          value: "" #0-100 progress in %
-
-        - label: "Graphics and animations"
-          value: "" #0-100 progress in %
-
-        - label: "Search engine marketing"
-          value: "" #0-100 progress in %
-
+          
 ### Portfolio [ portfolio ]
-portfolio:
-  title: "Recent Works"
+### portfolio:
+###   title: "Recent Works"
 
 ### Blog [ blog ]
-blog:
-  title: "Latest Posts"
+### blog:
+###   title: "Latest Posts"
 
 ### Contact Info List [ contacts-info ]
 contacts_info:
@@ -298,6 +290,12 @@ contacts_info:
     - label: "Email"
       value: "krispoole@pm.me"
 
+###    - label: "Phone"
+###      value: "+123 654 78900"
+
+###    - label: "Freelance"
+###      value: "Available"
+
 ### Contact Form [ contacts-form ]
-contacts_form:
-  title: "Contact Form"
+###contacts_form:
+###  title: "Contact Form"
