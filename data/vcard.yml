@@ -8,8 +8,8 @@
 ### param "buttons" - Buttons, icon class you can find here https://ionicons.com/v4/
 
 main:
-  bgimage: "images/bg2.png"
-  photo: "images/profile.jpg"
+  bgimage: "images/bgpic3.jpg"
+  photo: ""
   name: "Kris Poole"
   typed:
     - text: "Software Engineer"
