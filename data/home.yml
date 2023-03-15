@@ -12,16 +12,8 @@ about:
         </p>
         "
   list:
-    - label: "Age"
-      value: "35"
 
-    - label: "Residence"
-      value: "USA"
-
-    - label: "Work Status"
-      value: "Full Time Employed"
-
-    - label: "Address"
+    - label: "Location"
       value: "St Louis, Missouri, USA"
 
 ### Services [ services ]
