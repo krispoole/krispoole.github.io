@@ -258,10 +258,19 @@ skills:
         - label: "Web Development"
           value: "" #0-100 progress in %
 
-        - label: "AWS / Azure"
+        - label: "AWS"
+          value: "" #0-100 progress in %
+
+        - label: "Azure"
           value: "" #0-100 progress in %
 
         - label: "MySQL"
+          value: "" #0-100 progress in %
+
+        - label: "Front-end Development"
+          value: "" #0-100 progress in %
+
+        - label: "Unit/Integration Testing"
           value: "" #0-100 progress in %
           
 ### Portfolio [ portfolio ]
