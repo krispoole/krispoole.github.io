@@ -12,7 +12,7 @@ main:
   photo: ""
   name: "Kris Poole"
   typed:
-    - text: "Software Developer"
+    - text: "Software Engineer"
     - text: "Java Developer"
     - text: "Backend Developer"
     - text: "Sustainable Engineering Enthusiast"
