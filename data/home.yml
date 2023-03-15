@@ -8,7 +8,7 @@ about:
   title: "About Me"
   text: "
         <p>
-          <strong>Hi, I'm Kris Poole.</strong><br> I'm a Software Developer from St. Louis, Missouri, USA.
+          <strong>Hi, I'm Kris Poole.</strong><br> I am a Software Engineer from St. Louis, Missouri, USA.
         </p>
         "
   list:
@@ -16,9 +16,6 @@ about:
       value: "35"
 
     - label: "Residence"
-      value: "USA"
-
-    - label: "Address"
       value: "St Louis, Missouri, USA"
 
 ### Services [ services ]
@@ -107,16 +104,19 @@ pricing:
 
 ### Facts [ facts ]
 facts:
-  title: "Skills"
+  title: "Fun Facts"
   items:
-    - icon: "ion-coffee"
-      name: "Java"
+    - icon: "ion-planet"
+      name: "I used to be a NASA Engineer"
 
-    - icon: "ion-leaf"
-      name: "Spring Boot"
+    - icon: "ion-bonfire"
+      name: "I'm a Marine Corps Infantry Veteran"
 
     - icon: "ion-forward"
       name: "Backend Development"
+
+    - icon: "ion-earth"
+      name: "Earth is cool"
 
 
 ### Clients [ clients ]
@@ -293,16 +293,10 @@ contacts_info:
   title: "Get in Touch"
   list:
     - label: "Address"
-      value: "California, USA"
+      value: "St Louis, Missouri, USA"
 
     - label: "Email"
-      value: "adlard@example.com"
-
-    - label: "Phone"
-      value: "+123 654 78900"
-
-    - label: "Freelance"
-      value: "Available"
+      value: "krispoole@pm.me"
 
 ### Contact Form [ contacts-form ]
 contacts_form:
