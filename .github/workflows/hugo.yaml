@@ -69,7 +69,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
     runs-on: ubuntu-latest
     needs: build
     steps:
