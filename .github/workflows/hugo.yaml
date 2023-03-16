@@ -73,7 +73,7 @@ jobs:
     needs: build
     steps:
       - name: Deploy to GitHub Pages
-        env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         id: deployment
         uses: actions/deploy-pages@v1
+        with:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
