@@ -274,12 +274,12 @@ skills:
           value: "" #0-100 progress in %
           
 ### Portfolio [ portfolio ]
-### portfolio:
-###   title: "Recent Works"
+portfolio:
+  title: "Recent Works"
 
 ### Blog [ blog ]
-### blog:
-###   title: "Latest Posts"
+blog:
+  title: "Latest Posts"
 
 ### Contact Info List [ contacts-info ]
 contacts_info:

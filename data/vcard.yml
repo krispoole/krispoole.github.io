@@ -34,7 +34,7 @@ main:
   buttons:
     - title: "Download CV"
       icon: "ion ion-archive"
-      url: "https://drive.google.com/file/d/1C6s-CHtYuv-URdfp5jj0cKA9wk93Jh-R/view?usp=share_link"
+      url: "https://drive.google.com/file/d/1h6UWuZT72unAeAcUPYELW2r0J9Yq9bl-/view?usp=share_link"
     - title: "Contact Me"
       icon: "arrow"
       url: "mailto:krispoole@pm.me"
