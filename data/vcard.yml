@@ -32,7 +32,7 @@ main:
 ###      icon: "fab fa-stack-overflow"
 ###      url: "https://stackoverflow.com/"
   buttons:
-    - title: "Download CV"
+    - title: "Download Resume"
       icon: "ion ion-archive"
       url: "https://drive.google.com/file/d/1h6UWuZT72unAeAcUPYELW2r0J9Yq9bl-/view?usp=share_link"
     - title: "Contact Me"
