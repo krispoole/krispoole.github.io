@@ -13,8 +13,12 @@ main:
   name: "Kris Poole"
   typed:
     - text: "Software Engineer"
+    - text: "Full-Stack Software Engineer"
+    - text: "Backend Software Developer"
     - text: "Java Developer"
-    - text: "Full-Stack Engineer"
+    - text: "Cloud Application Developer"
+    - text: "Former Lead NASA Engineer"
+    - text: "Marine Corps Veteran"
   social:
     - title: "LinkedIn"
       icon: "fab fa-linkedin"
