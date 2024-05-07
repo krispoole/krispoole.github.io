@@ -52,3 +52,11 @@
   color: #fff;
   font-family: 'Courier New', Courier, monospace;
 }
+
+.rainbow-text {
+  background: linear-gradient(90deg, #f22, #f2f, #22f, #2ff, #2f2, #ff2, #f22);
+  -webkit-background-clip: text;
+  color: transparent; /* Hide the original text color */
+  display: inline-block; /* Necessary for gradients to apply correctly */
+}
+

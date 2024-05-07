@@ -11,7 +11,7 @@ const HomePage = () => {
       text: "Kris Poole's Terminal Portfolio",
     });
   
-    return <pre ref={asciiTextRef}></pre>;
+    return <pre ref={asciiTextRef} className='rainbow-text'></pre>;
   }
 
   const [terminalLineData, setTerminalLineData] = useState([
