@@ -1,7 +1,19 @@
 import React, { useState } from 'react';
 import Terminal, { ColorMode, TerminalOutput } from 'react-terminal-ui';
+import { useAsciiText } from 'react-ascii-text';
 
 const HomePage = () => {
+
+  function AsciiTitle() {
+    const asciiTextRef = useAsciiText({
+      fadeInOnly: true,
+      animationLoop: false,
+      text: "Kris Poole's Terminal Portfolio",
+    });
+  
+    return <pre ref={asciiTextRef}></pre>;
+  }
+
   const [terminalLineData, setTerminalLineData] = useState([
     <TerminalOutput>Welcome to My Portfolio Terminal!</TerminalOutput>
   ]);
@@ -13,10 +25,10 @@ const HomePage = () => {
     contact: "Contact me via email: example@example.com"
   };
 
+
   return (
     <div className="container">
       <Terminal
-        name="My Portfolio Terminal"
         colorMode={ColorMode.Dark}
         onInput={input => {
           // Handle commands here
@@ -24,6 +36,8 @@ const HomePage = () => {
           setTerminalLineData([...terminalLineData, <TerminalOutput>{output}</TerminalOutput>]);
         }}
       >
+        <AsciiTitle />
+
         {terminalLineData}
       </Terminal>
     </div>
