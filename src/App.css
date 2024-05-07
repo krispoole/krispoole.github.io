@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -51,6 +47,9 @@
   height: 80%;
   color: #fff;
   font-family: 'Courier New', Courier, monospace;
+  text-align: left;
+  padding: 0 20px;
+  white-space: pre-wrap;
 }
 
 .rainbow-text {
@@ -58,5 +57,13 @@
   -webkit-background-clip: text;
   color: transparent; /* Hide the original text color */
   display: inline-block; /* Necessary for gradients to apply correctly */
+}
+
+.username {
+  color: limegreen;
+}
+
+.path {
+  color: blue;
 }
 
