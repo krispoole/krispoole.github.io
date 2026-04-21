@@ -1,69 +1,124 @@
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* ── Layout ───────────────────────────────────────────────── */
 
 .container {
   width: 100%;
+  /* iOS Safari 100vh fix: dvh respected by modern browsers,
+     -webkit-fill-available as fallback for older iOS Safari */
   height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
+  background-color: #1a1a1a;
+  overflow: hidden;
 }
 
-.terminal-ui {
-  width: 90%;
-  height: 80%;
-  color: #fff;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: left;
-  padding: 0 20px;
-  white-space: pre-wrap;
+/* ── ASCII Title ──────────────────────────────────────────── */
+
+.ascii-title {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Fira Mono', Consolas, Menlo, Monaco, 'Courier New', monospace;
+  font-size: clamp(13px, 3.5vw, 18px);
+  line-height: 1.4;
+  margin-bottom: 12px;
+  user-select: none;
 }
+
+.ascii-title .rainbow-text {
+  display: block;
+}
+
+/* ── Rainbow gradient text ────────────────────────────────── */
 
 .rainbow-text {
-  background: linear-gradient(90deg, #f22, #f2f, #22f, #2ff, #2f2, #ff2, #f22);
+  background: linear-gradient(90deg, #f55, #f5f, #55f, #5ff, #5f5, #ff5, #f55);
   -webkit-background-clip: text;
-  color: transparent; /* Hide the original text color */
-  display: inline-block; /* Necessary for gradients to apply correctly */
+  background-clip: text;
+  color: transparent;
 }
+
+/* ── Prompt colours ───────────────────────────────────────── */
 
 .username {
   color: limegreen;
 }
 
 .path {
-  color: blue;
+  color: #6699ff;
 }
 
+.cmd-not-found {
+  color: #ff6b6b;
+}
+
+/* ── react-terminal-ui overrides ──────────────────────────── */
+
+/* Constrain max width on wide displays */
+.react-terminal-wrapper {
+  max-width: 900px;
+  width: 100% !important;
+}
+
+/* Allow long lines to wrap instead of causing horizontal scroll */
+.react-terminal-line {
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+}
+
+/* Prevent iOS Safari from zooming in on input focus */
+.terminal-hidden-input {
+  font-size: 16px !important;
+}
+
+/* Style links inside the terminal */
+.react-terminal a {
+  color: #5af;
+  text-decoration: underline;
+}
+
+/* Control the scrollable content area height via CSS so it fills
+   the viewport minus the wrapper's own padding (75px top + 35px bottom) */
+.react-terminal {
+  height: calc(100dvh - 110px) !important;
+}
+
+/* ── Mobile overrides (≤ 768 px) ──────────────────────────── */
+
+@media (max-width: 768px) {
+  .container {
+    /* Align to top so the terminal fills from the top down */
+    align-items: flex-start;
+  }
+
+  /* Reduce the library's excessive padding on small screens
+     Original: 75px 45px 35px  →  Mobile: 45px 15px 20px */
+  .react-terminal-wrapper {
+    padding: 45px 15px 20px !important;
+    border-radius: 0 !important;
+    font-size: 14px !important;
+  }
+
+  /* Recalculate terminal height for reduced mobile padding
+     (45px top + 20px bottom = 65px) */
+  .react-terminal {
+    height: calc(100dvh - 65px) !important;
+  }
+
+  .ascii-title {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+}
+
+/* ── Very small screens (≤ 375 px, e.g. iPhone SE) ───────── */
+
+@media (max-width: 375px) {
+  .react-terminal-wrapper {
+    font-size: 12px !important;
+  }
+
+  .ascii-title {
+    font-size: 11px;
+  }
+}

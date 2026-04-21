@@ -1,11 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Terminal, { ColorMode, TerminalOutput } from 'react-terminal-ui';
 import AsciiTitle from '../components/AsciiTitle';
 
+const isTouchDevice = 'ontouchstart' in window;
+
+const welcomeMessage = (
+  <TerminalOutput>
+    Welcome!{isTouchDevice ? ' Tap here to type.' : ''} Type <strong>'help'</strong> for available commands.
+  </TerminalOutput>
+);
+
 const HomePage = () => {
-  const [terminalLineData, setTerminalLineData] = useState([
-    <TerminalOutput>Welcome to My Portfolio Terminal! - Type 'help' to see a list of commands</TerminalOutput>
-  ]);
+  const [terminalLineData, setTerminalLineData] = useState([welcomeMessage]);
+
+  useEffect(() => {
+    // Prevent the keyboard from popping up immediately on mobile
+    if (isTouchDevice) {
+      const input = document.querySelector('.terminal-hidden-input');
+      if (input) input.blur();
+    }
+  }, []);
 
   const Prompt = () => (
     <span>
@@ -14,93 +28,129 @@ const HomePage = () => {
     </span>
   );
 
-  // Define commands that the terminal can interpret
   const commands = {
-    'help': () => (
+    help: () => (
       <TerminalOutput>
-        Available Commands: <br />
-        help - Display available commands <br />
-        clear - Clear the terminal <br />
-        about - Information about me <br />
-        contact - Contact details <br />
-        experience - Work experience <br />
-        skills - List skills <br />
-        linkedin - LinkedIn profile <br />
-        github - GitHub profile
-
+        Available commands:<br />
+        &nbsp; about      – About me<br />
+        &nbsp; experience – Work history<br />
+        &nbsp; skills     – Tech skills<br />
+        &nbsp; contact    – Get in touch<br />
+        &nbsp; linkedin   – LinkedIn profile<br />
+        &nbsp; github     – GitHub profile<br />
+        &nbsp; clear      – Clear terminal
       </TerminalOutput>
     ),
-    'clear': () => {
-        // To clear the terminal, reset to just the welcome message or keep the title only
-        setTerminalLineData([<TerminalOutput>Welcome to My Portfolio Terminal!</TerminalOutput>]);
-        return null;
-    },
-    'about': () => (
+    about: () => (
       <TerminalOutput>
-        Name: Kris Poole<br />
-        Role: Software Engineer<br />
-        Description: I am currently a software engineer at Boeing, where I work on developing and maintaining Spring Boot RESTful microservices for various aerospace projects. I have over nine years of engineering experience, spanning across different domains such as fintech, communications, and space launch systems.
-
-My core competencies include Java, Spring Boot, JavaScript, React, MySQL, AWS, Splunk, Jenkins, and Databricks. I also have a strong background in web development, API development, data extraction, containerization, and distributed systems. I enjoy solving complex problems, delivering high-quality software solutions, and collaborating with diverse teams. My goal is to leverage my skills and expertise to create innovative and impactful products that contribute to Boeing's mission of connecting, protecting, exploring, and inspiring the world.
+        Name:  Kris Poole<br />
+        Role:  Software Engineer<br />
+        <br />
+        9+ years of experience across fintech, communications,<br />
+        and space launch systems. Currently building Spring Boot<br />
+        microservices for aerospace projects at Boeing.<br />
+        <br />
+        Strong background in API development, distributed<br />
+        systems, containerization, and cloud infrastructure.
       </TerminalOutput>
     ),
-    'contact': () => (
+    experience: () => (
       <TerminalOutput>
-        Email: john.doe@example.com<br />
-        Phone: 123-456-7890
+        Work History:<br />
+        <br />
+        Boeing – Software Engineer (current)<br />
+        &nbsp; Spring Boot microservices for aerospace systems<br />
+        &nbsp; Java, AWS, Databricks, Jenkins, Splunk<br />
+        <br />
+        9+ years total across fintech, communications,<br />
+        and space launch systems.<br />
+        <br />
+        Type 'linkedin' for the full work history.
       </TerminalOutput>
     ),
-    'experience': () => (
+    skills: () => (
       <TerminalOutput>
-        Previous Roles:<br />
-        - Senior Developer at TechCorp (2020-2024)<br />
-        - Junior Developer at DevStartup (2018-2020)
+        Languages:   Java, JavaScript, SQL<br />
+        Frameworks:  Spring Boot, React, Node.js<br />
+        Cloud:       AWS (EC2, S3, Lambda, RDS)<br />
+        Data:        MySQL, Databricks, Splunk<br />
+        DevOps:      Jenkins, Docker, Git<br />
+        Other:       REST APIs, Microservices, Agile
       </TerminalOutput>
     ),
-    'skills': () => (
+    contact: () => (
       <TerminalOutput>
-        Skills:<br />
-        - JavaScript<br />
-        - React<br />
-        - Node.js<br />
-        - Cloud Services
+        LinkedIn: linkedin.com/in/krispoole<br />
+        GitHub:   github.com/krispoole<br />
+        <br />
+        Type 'linkedin' or 'github' for direct links.
       </TerminalOutput>
     ),
-    'linkedin': () => (
+    linkedin: () => (
       <TerminalOutput>
-        LinkedIn: <a href="https://www.linkedin.com/in/krispoole" target="_blank">https://www.linkedin.com/in/krispoole</a>
+        {'→ '}
+        <a
+          href="https://www.linkedin.com/in/krispoole"
+          target="_blank"
+          rel="noreferrer"
+        >
+          https://www.linkedin.com/in/krispoole
+        </a>
       </TerminalOutput>
     ),
-    'github': () => (
+    github: () => (
       <TerminalOutput>
-        GitHub: <a href="https://github.com/krispoole" target="_blank">https://github.com/krispoole</a>
+        {'→ '}
+        <a
+          href="https://github.com/krispoole"
+          target="_blank"
+          rel="noreferrer"
+        >
+          https://github.com/krispoole
+        </a>
       </TerminalOutput>
-    )
+    ),
   };
 
-  // Function to handle terminal input
   const handleInput = (input) => {
-    const commandFunction = commands[input];
-    const output = commandFunction ? commandFunction() : <span className="text-response">Command not found - Type 'help' to see a list of commands</span>;
-    // Include the user's input as part of the terminal output
-    setTerminalLineData(prev => [
+    const trimmed = input.trim().toLowerCase();
+
+    if (trimmed === 'clear') {
+      setTerminalLineData([welcomeMessage]);
+      return;
+    }
+
+    const commandFn = commands[trimmed];
+    const output = commandFn ? (
+      commandFn()
+    ) : (
+      <TerminalOutput>
+        <span className="cmd-not-found">
+          '{trimmed}' not found — type 'help' for options
+        </span>
+      </TerminalOutput>
+    );
+
+    setTerminalLineData((prev) => [
       ...prev,
-      <TerminalOutput><Prompt />{input}</TerminalOutput>,
-      output
+      <TerminalOutput>
+        <Prompt />
+        {input}
+      </TerminalOutput>,
+      output,
     ]);
   };
 
   return (
     <div className="container">
       <Terminal
+        name="krispoole.dev"
         colorMode={ColorMode.Dark}
         onInput={handleInput}
       >
         <AsciiTitle />
         {terminalLineData.map((line, index) => (
-          <React.Fragment key={index}>
-            {line}
-          </React.Fragment>
+          <React.Fragment key={index}>{line}</React.Fragment>
         ))}
       </Terminal>
     </div>
