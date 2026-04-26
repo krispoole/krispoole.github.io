@@ -1,6 +1,6 @@
 {
   "short_name": "Kris Poole",
-  "name": "Kris Poole – Terminal Portfolio",
+  "name": "Kris Poole – AI Architecture Engineer",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#1a1a1a",
-  "background_color": "#1a1a1a"
+  "theme_color": "#08080d",
+  "background_color": "#08080d"
 }
